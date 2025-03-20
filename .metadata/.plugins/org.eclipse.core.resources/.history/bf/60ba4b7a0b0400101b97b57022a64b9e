@@ -1,0 +1,5 @@
+package com.jose.demo.dto;
+
+public class ProductoDTO {
+
+}

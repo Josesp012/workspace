@@ -1,0 +1,18 @@
+package com.jose.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jose.demo.models.entities.Categoria;
+import com.jose.demo.models.entities.CategoriaRepository;
+
+public class CategoriaServiceImpl implements IService<Categoria> {
+	@Autowired
+	private CategoriaRepository repository;
+	
+	@Override
+	@Transactional(readOnly=true)
+	public Categoria editar(Categoria entity,Long id) {
+		Optional<Categoria>
+	}
+}

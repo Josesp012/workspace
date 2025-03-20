@@ -1,0 +1,36 @@
+package com.jose.demo.controllers;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/test")
+public class TestController {
+	@GetMapping
+	public String testControllerString() {
+		return "Controlador de prueba para get";
+		
+	}//testControllerString
+	
+	@PostMapping
+	public String testControllerStringPo() {
+		return "Controlador de prueba";
+		
+	}//testControllerString
+	
+	@PutMapping
+	public String testControllerStringPu() {
+		return "Controlador de prueba";
+		
+	}//testControllerString
+	
+	@DeleteMapping
+	public String testControllerStringD() {
+		return "Controlador de prueba";
+		
+	}//testControllerString
+}//TestController

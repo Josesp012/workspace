@@ -1,0 +1,18 @@
+spring.application.name=demo
+
+spring.jpa.hibernate.ddl-auto=create-drop
+
+#Propiedades para conectarse con oracle
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+spring.datasource.username=db_curso
+spring.datasource.password=curso123
+
+#POOL DE CONEXIONES
+#El pool puede tener hasta 10 conexiones activas simultaneamente
+spring.datasource.hikari.maximum-pool-size=10
+#El pool intentara mantener al menos 5 caracteres inactivas disponibles
+spring.datasource.hikari.minimum-idle=5
+#Si una conexion esta inactiva durante 30 segundos, se cerrara
+spring.datasource.hikari.idle-timeout=30000
+#las conexiones se cerraran automaticamente despues de 30 minutos, incluso si estan activas
+spring.datasource.hikari.max-lifetime=180000

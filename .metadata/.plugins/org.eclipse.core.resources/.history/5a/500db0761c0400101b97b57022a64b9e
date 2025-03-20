@@ -1,0 +1,99 @@
+package com.jose.demo.models.entities;
+
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="PRODUCTOS_TEMPORAL")
+public class ProductoServiceImpl  {
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="TEST_SEQ")
+	@SequenceGenerator(name="TEST_SEQ",sequenceName="TEST_SEQ",allocationSize=1)
+	@Column(name="ID_PRODUCTO")
+	private Long id;
+	
+	@Column(name="NOMBRE")
+	private String nombre;
+	
+	@Column(name="DESCRIPCION")
+	private String descripcion;
+	
+	@Column(name="STOCK")
+	private int stock;
+	
+	@Column(name="FECHA_CREACION",updatable=false)
+	private Date fechaCreacion;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="ID_CATEGORIA")
+	@JsonIgnoreProperties({"hibernateLazyInitializar","handle"})
+	private Categoria categoria;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+	
+
+	@PrePersist
+	public void prePersist() {
+		this.fechaCreacion= new Date();
+		
+	}
+}

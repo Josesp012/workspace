@@ -1,0 +1,11 @@
+package com.jose.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jose.demo.models.entities.CategoriaRepository;
+
+public class CategoriaServiceImpl implements IService<Categoria> {
+	@Autowired
+	private CategoriaRepository repository;
+	
+}

@@ -1,0 +1,72 @@
+package com.jose.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jose.demo.models.entities.Categoria;
+import com.jose.demo.models.entities.CategoriaRepository;
+
+public class CategoriaServiceImpl implements IService<Categoria> {
+	@Autowired
+	private CategoriaRepository repository;
+	
+	private
+
+	@Override
+	@Transactional(readOnly=true)
+	public List<Categoria> listar() {
+		return repository.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly=true)
+	public Page<Categoria> listar(Pageable page) {
+		return repository.findAll(page);
+	}
+
+	@Override
+	public Optional<Categoria> obtenerPorId(Long id) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Categoria crear(Categoria entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Categoria eliminar(Long id) {
+			Optional<Categoria> optCategoria = repository.findById(id);
+			if(optCategoria.isPresent()) {
+				repository.deleteAllById(id);
+				return optCategoria.get();
+			}else {
+				return null
+			}
+		
+	}
+
+	@Override
+	public Categoria editar(Categoria entity, Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public Categoria addProducto(Long idCategoria, Long idProducto) {
+		Categoria categoria = new Categoria();
+		Optional<Categoria> optCategoria=repository.findById(idCategoria);
+		if(optCategoria.isPresent()) {
+			Optional<Producto> optProducto= productoRepository.findbyId(idProducto);
+			if(optCategoria.isPresent()) {
+				re
+			}
+		}
+	}
+}

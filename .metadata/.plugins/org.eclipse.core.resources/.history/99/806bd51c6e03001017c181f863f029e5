@@ -1,0 +1,5 @@
+package com.jose.demo.models.entities;
+
+public class Categoria {
+
+}

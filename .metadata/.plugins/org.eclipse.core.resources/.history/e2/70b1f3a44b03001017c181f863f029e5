@@ -1,0 +1,50 @@
+package com.jose.demo.controllers;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/test")
+public class TestController {
+	@GetMapping("/get")
+	public String testControllerString() {
+		return "Controlador de prueba para get";
+		
+	}//testControllerString
+	
+	@GetMapping("/get/{nombre}")
+	public String testControllerStringGet(@PathVariable String nombre){
+		return "Controlador de prueba con el valor de " + nombre;
+		
+	}//testControllerString
+	
+	@GetMapping("/get/{nombre}/{apellido}")
+	public String testControllerStringGet(@PathVariable String nombre, @PathVariable String apellido){
+		return "Controlador de prueba con el valor de " + nombre +" "+ apellido;
+		
+	}//testControllerString
+	
+	@PostMapping("/post")
+	public String testControllerStringPo(@RequestBody String texto) {
+		return "Datos recibidos mediante POST " + texto;
+		
+	}//testControllerString
+	
+	@PutMapping("/put")
+	public String testControllerStringPu() {
+		return "Controlador de prueba para put";
+		
+	}//testControllerString
+	
+	@DeleteMapping("/delete")
+	public String testControllerStringD() {
+		return "Controlador de prueba para delete";
+		
+	}//testControllerString
+}//TestController

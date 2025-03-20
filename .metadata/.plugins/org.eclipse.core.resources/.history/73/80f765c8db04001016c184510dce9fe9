@@ -1,0 +1,5 @@
+package com.jose.aerolineas.services;
+
+public class AerolineaServiceImpl {
+
+}

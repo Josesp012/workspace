@@ -1,0 +1,5 @@
+package com.jose.aerolineas.repositories;
+
+public class AerolineaRepository extends JpaRepository<Aerolinea,Long>{
+
+}

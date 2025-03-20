@@ -1,0 +1,53 @@
+package com.jose.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.jose.demo.models.entities.Producto;
+import com.jose.demo.models.repositories.ProductoRepository;
+
+@Service
+public class ProductoServicelmpl implements ProductoService {
+	
+	@Autowired
+	private ProductoRepository repository;
+	
+	@Override
+	public List<Producto> listar() {
+		
+		return repository.findAll();
+	}
+
+	@Override
+	public Page<Producto> listar(Pageable page) {
+		return repository.findAll(page);
+		return null;
+	}
+
+	@Override
+	public Optional<Producto> obtenerPorId(Long id) {
+		return repository.findById(id);
+	}
+
+	@Override
+	public Producto crear(Producto producto) {
+		return repository.save(producto);
+	}
+
+	@Override
+	public Producto editar(Producto producto, Long id) {
+		return null;
+	}
+
+	@Override
+	public Producto eliminar(Producto producto) {
+		 repository.delete(producto);
+		 return producto;
+	}
+	
+}

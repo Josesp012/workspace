@@ -1,0 +1,10 @@
+package com.jose.aerolineas.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.jose.commons.models.entity.Aerolinea;
+
+
+public interface AerolineaRepository extends JpaRepository<Aerolinea,Long>{
+
+}

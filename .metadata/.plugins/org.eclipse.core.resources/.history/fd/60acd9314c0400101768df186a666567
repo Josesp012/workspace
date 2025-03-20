@@ -1,0 +1,10 @@
+package com.jose.commons.models.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Avion")
+public class Avion {
+	
+}

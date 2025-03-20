@@ -1,0 +1,18 @@
+package com.jose.demo.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.jose.demo.models.entities.Producto;
+
+public interface ProductoService {
+	List<Producto> listar();
+	Page<Producto> listar(Pageable page);
+	Optional<Producto>obtenerPorId(Long id);
+	Producto crear(Producto producto);
+	Producto editar(Producto producto, Long id);
+	Producto eliminar(Long producto);
+}//ProductoService
