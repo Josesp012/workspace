@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\Usuario\\Downloads\\workspace\\microservicios-commons\\.git;
-GitRepositoriesView.GitDirectories.relative=microservicios-commons\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\Usuario\\Downloads\\workspace\\.git;C\:\\Users\\Usuario\\Downloads\\workspace\\microservicios-commons\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;microservicios-commons\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

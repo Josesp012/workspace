@@ -1,8 +1,0 @@
-package com.jose.aerolineas.services;
-
-import com.jose.commons.models.entity.Aerolinea;
-import com.jose.commons.services.CommonService;
-
-public interface AerolineaService extends CommonService<Aerolinea>{
-	
-}

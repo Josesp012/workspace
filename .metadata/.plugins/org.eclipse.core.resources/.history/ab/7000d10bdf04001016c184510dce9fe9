@@ -1,5 +1,0 @@
-package com.jose.aerolineas.services;
-
-public class AerolineaServiceImpl CommonServiceImpl<Aerolinea, AerolineaRepository> implements AerolineaService{
-	
-}

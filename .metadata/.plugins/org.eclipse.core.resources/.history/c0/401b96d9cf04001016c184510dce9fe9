@@ -1,5 +1,0 @@
-package com.jose.commons.services;
-
-public interface CommonService {
-
-}
