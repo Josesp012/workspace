@@ -49,7 +49,6 @@ INDEX VERSION 1.132+C:\Users\Usuario\Downloads\workspace\.metadata\.plugins\org.
 579629928.index
 2601163209.index
 292404783.index
-2824202299.index
 2765663922.index
 3399723772.index
 2254649208.index
